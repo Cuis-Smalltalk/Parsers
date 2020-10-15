@@ -1,5 +1,7 @@
 'From Cuis 4.0 of 21 April 2012 [latest update: #1291] on 3 June 2012 at 12:01:25 pm'!
 'Description Please enter a description for this package '!
+!provides: 'PetitTests' 1 1!
+!requires: 'PetitParser' 1 2 nil!
 !classDefinition: #PPAbstractParserTest category: #'PetitTests-Core'!
 TestCase subclass: #PPAbstractParserTest
 	instanceVariableNames: ''

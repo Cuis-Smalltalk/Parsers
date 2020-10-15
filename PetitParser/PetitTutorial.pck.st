@@ -1,5 +1,7 @@
 'From Cuis 4.0 of 21 April 2012 [latest update: #1292] on 1 June 2012 at 11:41:51 pm'!
 'Description Please enter a description for this package '!
+!provides: 'PetitTutorial' 1 1!
+!requires: 'PetitParser' 1 2 nil!
 !classDefinition: #ExpressionGrammar category: #PetitTutorial!
 PPCompositeParser subclass: #ExpressionGrammar
 	instanceVariableNames: 'add prod term mul prim parens number'
