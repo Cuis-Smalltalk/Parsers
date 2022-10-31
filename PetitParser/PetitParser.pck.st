@@ -1,374 +1,379 @@
-'From Cuis 5.0 of 7 November 2016 [latest update: #3196] on 25 October 2017 at 8:28:10 pm'!
+'From Cuis 6.0 [latest update: #5546] on 31 October 2022 at 6:14:39 pm'!
 'Description Please enter a description for this package '!
-!provides: 'PetitParser' 1 2!
+!provides: 'PetitParser' 1 3!
 !requires: 'SqueakCompatibility' 1 27 nil!
-!classDefinition: #PPStream category: #'PetitParser-Core'!
+SystemOrganization addCategory: 'PetitParser-Core'!
+SystemOrganization addCategory: 'PetitParser-Tools'!
+SystemOrganization addCategory: 'PetitParser-Parsers'!
+
+
+!classDefinition: #PPStream category: 'PetitParser-Core'!
 ReadStream subclass: #PPStream
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Core'!
-!classDefinition: 'PPStream class' category: #'PetitParser-Core'!
+!classDefinition: 'PPStream class' category: 'PetitParser-Core'!
 PPStream class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPCharSetPredicate category: #'PetitParser-Tools'!
-Object subclass: #PPCharSetPredicate
-	instanceVariableNames: 'block classification'
-	classVariableNames: ''
-	poolDictionaries: ''
-	category: 'PetitParser-Tools'!
-!classDefinition: 'PPCharSetPredicate class' category: #'PetitParser-Tools'!
-PPCharSetPredicate class
-	instanceVariableNames: ''!
-
-!classDefinition: #PPFailure category: #'PetitParser-Core'!
+!classDefinition: #PPFailure category: 'PetitParser-Core'!
 Object subclass: #PPFailure
 	instanceVariableNames: 'message position'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Core'!
-!classDefinition: 'PPFailure class' category: #'PetitParser-Core'!
+!classDefinition: 'PPFailure class' category: 'PetitParser-Core'!
 PPFailure class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPMemento category: #'PetitParser-Core'!
+!classDefinition: #PPMemento category: 'PetitParser-Core'!
 Object subclass: #PPMemento
 	instanceVariableNames: 'result count position'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Core'!
-!classDefinition: 'PPMemento class' category: #'PetitParser-Core'!
+!classDefinition: 'PPMemento class' category: 'PetitParser-Core'!
 PPMemento class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPToken category: #'PetitParser-Core'!
+!classDefinition: #PPToken category: 'PetitParser-Core'!
 Object subclass: #PPToken
 	instanceVariableNames: 'collection start stop'
 	classVariableNames: 'NewLineParser'
 	poolDictionaries: ''
 	category: 'PetitParser-Core'!
-!classDefinition: 'PPToken class' category: #'PetitParser-Core'!
+!classDefinition: 'PPToken class' category: 'PetitParser-Core'!
 PPToken class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPCharSetPredicate category: 'PetitParser-Tools'!
+Object subclass: #PPCharSetPredicate
+	instanceVariableNames: 'block classification'
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'PetitParser-Tools'!
+!classDefinition: 'PPCharSetPredicate class' category: 'PetitParser-Tools'!
+PPCharSetPredicate class
+	instanceVariableNames: ''!
+
+!classDefinition: #PPParser category: 'PetitParser-Parsers'!
 Object subclass: #PPParser
 	instanceVariableNames: 'properties'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPParser class' category: 'PetitParser-Parsers'!
 PPParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPUnresolvedParser category: #'PetitParser-Tools'!
+!classDefinition: #PPUnresolvedParser category: 'PetitParser-Tools'!
 PPParser subclass: #PPUnresolvedParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Tools'!
-!classDefinition: 'PPUnresolvedParser class' category: #'PetitParser-Tools'!
+!classDefinition: 'PPUnresolvedParser class' category: 'PetitParser-Tools'!
 PPUnresolvedParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPDelegateParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPDelegateParser category: 'PetitParser-Parsers'!
 PPParser subclass: #PPDelegateParser
 	instanceVariableNames: 'parser'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPDelegateParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPDelegateParser class' category: 'PetitParser-Parsers'!
 PPDelegateParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPCompositeParser category: #'PetitParser-Tools'!
+!classDefinition: #PPCompositeParser category: 'PetitParser-Tools'!
 PPDelegateParser subclass: #PPCompositeParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Tools'!
-!classDefinition: 'PPCompositeParser class' category: #'PetitParser-Tools'!
+!classDefinition: 'PPCompositeParser class' category: 'PetitParser-Tools'!
 PPCompositeParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPExpressionParser category: #'PetitParser-Tools'!
+!classDefinition: #PPExpressionParser category: 'PetitParser-Tools'!
 PPDelegateParser subclass: #PPExpressionParser
 	instanceVariableNames: 'operators'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Tools'!
-!classDefinition: 'PPExpressionParser class' category: #'PetitParser-Tools'!
+!classDefinition: 'PPExpressionParser class' category: 'PetitParser-Tools'!
 PPExpressionParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPActionParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPActionParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPActionParser
 	instanceVariableNames: 'block'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPActionParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPActionParser class' category: 'PetitParser-Parsers'!
 PPActionParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPWrappingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPWrappingParser category: 'PetitParser-Parsers'!
 PPActionParser subclass: #PPWrappingParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPWrappingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPWrappingParser class' category: 'PetitParser-Parsers'!
 PPWrappingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPAndParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPAndParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPAndParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPAndParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPAndParser class' category: 'PetitParser-Parsers'!
 PPAndParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPEndOfInputParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPEndOfInputParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPEndOfInputParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPEndOfInputParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPEndOfInputParser class' category: 'PetitParser-Parsers'!
 PPEndOfInputParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPFlattenParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPFlattenParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPFlattenParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPFlattenParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPFlattenParser class' category: 'PetitParser-Parsers'!
 PPFlattenParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPTokenParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPTokenParser category: 'PetitParser-Parsers'!
 PPFlattenParser subclass: #PPTokenParser
 	instanceVariableNames: 'tokenClass'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPTokenParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPTokenParser class' category: 'PetitParser-Parsers'!
 PPTokenParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPMemoizedParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPMemoizedParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPMemoizedParser
 	instanceVariableNames: 'stream buffer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPMemoizedParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPMemoizedParser class' category: 'PetitParser-Parsers'!
 PPMemoizedParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPNotParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPNotParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPNotParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPNotParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPNotParser class' category: 'PetitParser-Parsers'!
 PPNotParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPOptionalParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPOptionalParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPOptionalParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPOptionalParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPOptionalParser class' category: 'PetitParser-Parsers'!
 PPOptionalParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPRepeatingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPRepeatingParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPRepeatingParser
 	instanceVariableNames: 'min max'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPRepeatingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPRepeatingParser class' category: 'PetitParser-Parsers'!
 PPRepeatingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPLimitedRepeatingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPLimitedRepeatingParser category: 'PetitParser-Parsers'!
 PPRepeatingParser subclass: #PPLimitedRepeatingParser
 	instanceVariableNames: 'limit'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPLimitedRepeatingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPLimitedRepeatingParser class' category: 'PetitParser-Parsers'!
 PPLimitedRepeatingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPGreedyRepeatingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPGreedyRepeatingParser category: 'PetitParser-Parsers'!
 PPLimitedRepeatingParser subclass: #PPGreedyRepeatingParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPGreedyRepeatingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPGreedyRepeatingParser class' category: 'PetitParser-Parsers'!
 PPGreedyRepeatingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPLazyRepeatingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPLazyRepeatingParser category: 'PetitParser-Parsers'!
 PPLimitedRepeatingParser subclass: #PPLazyRepeatingParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPLazyRepeatingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPLazyRepeatingParser class' category: 'PetitParser-Parsers'!
 PPLazyRepeatingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPPossessiveRepeatingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPPossessiveRepeatingParser category: 'PetitParser-Parsers'!
 PPRepeatingParser subclass: #PPPossessiveRepeatingParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPPossessiveRepeatingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPPossessiveRepeatingParser class' category: 'PetitParser-Parsers'!
 PPPossessiveRepeatingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPTrimmingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPTrimmingParser category: 'PetitParser-Parsers'!
 PPDelegateParser subclass: #PPTrimmingParser
 	instanceVariableNames: 'trimmer'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPTrimmingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPTrimmingParser class' category: 'PetitParser-Parsers'!
 PPTrimmingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPEpsilonParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPEpsilonParser category: 'PetitParser-Parsers'!
 PPParser subclass: #PPEpsilonParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPEpsilonParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPEpsilonParser class' category: 'PetitParser-Parsers'!
 PPEpsilonParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPFailingParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPFailingParser category: 'PetitParser-Parsers'!
 PPParser subclass: #PPFailingParser
 	instanceVariableNames: 'message'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPFailingParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPFailingParser class' category: 'PetitParser-Parsers'!
 PPFailingParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPListParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPListParser category: 'PetitParser-Parsers'!
 PPParser subclass: #PPListParser
 	instanceVariableNames: 'parsers'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPListParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPListParser class' category: 'PetitParser-Parsers'!
 PPListParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPChoiceParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPChoiceParser category: 'PetitParser-Parsers'!
 PPListParser subclass: #PPChoiceParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPChoiceParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPChoiceParser class' category: 'PetitParser-Parsers'!
 PPChoiceParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPSequenceParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPSequenceParser category: 'PetitParser-Parsers'!
 PPListParser subclass: #PPSequenceParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPSequenceParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPSequenceParser class' category: 'PetitParser-Parsers'!
 PPSequenceParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPLiteralParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPLiteralParser category: 'PetitParser-Parsers'!
 PPParser subclass: #PPLiteralParser
 	instanceVariableNames: 'literal message'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPLiteralParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPLiteralParser class' category: 'PetitParser-Parsers'!
 PPLiteralParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPLiteralObjectParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPLiteralObjectParser category: 'PetitParser-Parsers'!
 PPLiteralParser subclass: #PPLiteralObjectParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPLiteralObjectParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPLiteralObjectParser class' category: 'PetitParser-Parsers'!
 PPLiteralObjectParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPLiteralSequenceParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPLiteralSequenceParser category: 'PetitParser-Parsers'!
 PPLiteralParser subclass: #PPLiteralSequenceParser
 	instanceVariableNames: 'size'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPLiteralSequenceParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPLiteralSequenceParser class' category: 'PetitParser-Parsers'!
 PPLiteralSequenceParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPPluggableParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPPluggableParser category: 'PetitParser-Parsers'!
 PPParser subclass: #PPPluggableParser
 	instanceVariableNames: 'block'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPPluggableParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPPluggableParser class' category: 'PetitParser-Parsers'!
 PPPluggableParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPPredicateParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPPredicateParser category: 'PetitParser-Parsers'!
 PPParser subclass: #PPPredicateParser
 	instanceVariableNames: 'predicate predicateMessage negated negatedMessage'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPPredicateParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPPredicateParser class' category: 'PetitParser-Parsers'!
 PPPredicateParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPPredicateObjectParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPPredicateObjectParser category: 'PetitParser-Parsers'!
 PPPredicateParser subclass: #PPPredicateObjectParser
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPPredicateObjectParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPPredicateObjectParser class' category: 'PetitParser-Parsers'!
 PPPredicateObjectParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPPredicateSequenceParser category: #'PetitParser-Parsers'!
+!classDefinition: #PPPredicateSequenceParser category: 'PetitParser-Parsers'!
 PPPredicateParser subclass: #PPPredicateSequenceParser
 	instanceVariableNames: 'size'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitParser-Parsers'!
-!classDefinition: 'PPPredicateSequenceParser class' category: #'PetitParser-Parsers'!
+!classDefinition: 'PPPredicateSequenceParser class' category: 'PetitParser-Parsers'!
 PPPredicateSequenceParser class
 	instanceVariableNames: ''!
 
@@ -610,86 +615,6 @@ A parser that accepts if a given predicate on an arbitrary number of elements of
 Instance Variables:
 	size	<Integer>	The number of elements to consume.!
 
-!Object methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:58'!
-asParser
-	"Answer a parser accepting the receiving object."
-
-	^ PPPredicateObjectParser expect: self! !
-
-!Object methodsFor: '*petitparser-core-testing' stamp: 'lr 2/7/2010 20:54'!
-isPetitFailure
-	^ false! !
-
-!Object methodsFor: '*petitparser-core-testing' stamp: 'lr 8/6/2010 16:44'!
-isPetitParser
-	^ false! !
-
-!UndefinedObject methodsFor: '*petitparser-converting' stamp: 'lr 11/29/2011 20:49'!
-asParser
-	"Answer a parser that succeeds and does not consume anything."
-	
-	^ PPEpsilonParser new! !
-
-!Character methodsFor: '*petitparser-core-operators' stamp: 'lr 6/12/2010 09:04'!
-- aCharacter
-	"Create a range of characters between the receiver and the argument."
-	
-	^ PPPredicateObjectParser between: self and: aCharacter! !
-
-!Character methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:58'!
-asParser
-	"Answer a parser that accepts the receiving character."
-	
-	^ PPLiteralObjectParser on: self! !
-
-!BlockClosure methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:48'!
-asParser
-	"Answer a parser implemented in the receiving one-argument block."
-
-	^ PPPluggableParser on: self! !
-
-!Collection methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:38'!
-asChoiceParser
-	^ PPChoiceParser withAll: (self collect: [ :each | each asParser ])! !
-
-!Collection methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:38'!
-asSequenceParser
-	^ PPSequenceParser withAll: (self collect: [ :each | each asParser ])! !
-
-!SequenceableCollection methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:57'!
-asParser
-	self notify: 'SequenceableCollection>>#asParser is no longer supported. If you would like to create a PPSequenceParser from a Collection consider using #asSequenceParser instead.'.
-	^ self asSequenceParser! !
-
-!SequenceableCollection methodsFor: '*petitparser-core-converting' stamp: 'lr 2/7/2010 20:53'!
-asPetitStream
-	^ PPStream on: self! !
-
-!String methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:48'!
-asParser
-	"Answer a parser that accepts the receiving string."
-
-	^ PPLiteralSequenceParser on: self! !
-
-!Symbol methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:58'!
-asParser
-	"Answer a predicate parser named after the receiving symbol. Possible symbols are the method selectors on the class-side of PPPredicateObjectParser."
-
-	^ PPPredicateObjectParser perform: self! !
-
-!Text methodsFor: '*petitparser-core-converting' stamp: 'lr 2/7/2010 20:53'!
-asPetitStream
-	^ string asPetitStream! !
-
-!Set methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:57'!
-asParser
-	self notify: 'Set>>#asParser is no longer supported. If you would like to create a PPChoiceParser from a Collection consider using #asChoiceParser instead. Sets have a unpredictable order and should be avoided'.
-	^ self asChoiceParser! !
-
-!Stream methodsFor: '*petitparser-core-converting' stamp: 'lr 4/8/2010 14:46'!
-asPetitStream
-	^ self contents asPetitStream! !
-
 !PPStream methodsFor: 'converting' stamp: 'lr 2/7/2010 20:53'!
 asPetitStream
 	^ self! !
@@ -712,42 +637,20 @@ position: anInteger
 
 	position := anInteger! !
 
-!PPStream methodsFor: 'printing' stamp: 'lr 11/4/2010 19:23'!
-printOn: aStream
-	collection isString
-		ifFalse: [ ^ super printOn: aStream ].
-	aStream
-		nextPutAll: (collection copyFrom: 1 to: position);
-		nextPutAll: '·';
-		nextPutAll: (collection copyFrom: position + 1 to: readLimit)! !
-
 !PPStream methodsFor: 'accessing' stamp: 'lr 10/5/2010 16:29'!
 uncheckedPeek
 	"An unchecked version of peek that throws an error if we try to peek over the end of the stream, even faster than #peek."
 
 	^ collection at: position + 1! !
 
-!PPCharSetPredicate methodsFor: 'initialization' stamp: 'lr 8/30/2010 12:19'!
-initializeOn: aBlock
-	block := aBlock.
-	classification := Array new: 255.
-	1 to: classification size do: [ :index |
-		classification at: index put: (block
-			value: (Character value: index)) ]! !
-
-!PPCharSetPredicate methodsFor: 'evaluating' stamp: 'lr 8/30/2010 12:19'!
-value: aCharacter
-	| index |
-	index := aCharacter asInteger.
-	index == 0
-		ifTrue: [ ^ block value: aCharacter ].
-	index > 255
-		ifTrue: [ ^ block value: aCharacter ].
-	^ classification at: index! !
-
-!PPCharSetPredicate class methodsFor: 'instance creation' stamp: 'lr 8/25/2010 11:05'!
-on: aBlock
-	^ self basicNew initializeOn: aBlock! !
+!PPStream methodsFor: 'printing' stamp: 'lr 11/4/2010 19:23'!
+printOn: aStream
+	collection isString
+		ifFalse: [ ^ super printOn: aStream ].
+	aStream
+		nextPutAll: (collection copyFrom: 1 to: position);
+		nextPutAll: 'Â·';
+		nextPutAll: (collection copyFrom: position + 1 to: readLimit)! !
 
 !PPFailure methodsFor: 'initialization' stamp: 'lr 5/5/2010 13:55'!
 initializeMessage: aString at: anInteger
@@ -817,58 +720,15 @@ new
 = anObject
 	^ self class = anObject class and: [ self value = anObject value ]! !
 
+!PPToken methodsFor: 'comparing' stamp: 'lr 10/7/2009 09:06'!
+hash
+	^ self value hash! !
+
 !PPToken methodsFor: 'accessing' stamp: 'lr 6/15/2010 23:34'!
 collection
 	"Answer the underlying collection of this token."
 
 	^ collection! !
-
-!PPToken methodsFor: 'querying' stamp: 'lr 9/7/2011 20:40'!
-column
-	"Answer the column number of this token in the underlying collection."
-	
-	| position |
-	position := 0.
-	(NewLineParser , [ :stream |
-		start <= stream position
-			ifTrue: [ ^ start - position ].
-		position := stream position ] asParser
-		/ #any asParser) star
-			parse: collection.
-	 ^ start - position! !
-
-!PPToken methodsFor: 'copying' stamp: 'lr 6/16/2008 10:55'!
-copyFrom: aStartInteger to: aStopInteger
-	^ self class on: collection start: start + aStartInteger - 1 stop: stop + aStopInteger - 3! !
-
-!PPToken methodsFor: 'comparing' stamp: 'lr 10/7/2009 09:06'!
-hash
-	^ self value hash! !
-
-!PPToken methodsFor: 'initialization' stamp: 'lr 4/30/2010 12:13'!
-initializeOn: aSequenceableCollection start: aStartInteger stop: aStopInteger
-	collection := aSequenceableCollection.
-	start := aStartInteger.
-	stop := aStopInteger! !
-
-!PPToken methodsFor: 'querying' stamp: 'lr 9/7/2011 20:41'!
-line
-	"Answer the line number of this token in the underlying collection."
-	
-	| line |
-	line := 1.
-	(NewLineParser , [ :stream |
-		start <= stream position
-			ifTrue: [ ^ line ].
-		line := line + 1 ] asParser
-		/ #any asParser) star
-			parse: collection.
-	^ line! !
-
-!PPToken methodsFor: 'printing' stamp: 'lr 6/16/2008 10:13'!
-printOn: aStream
-	super printOn: aStream.
-	aStream nextPut: $(; nextPutAll: self value; nextPut: $)! !
 
 !PPToken methodsFor: 'accessing' stamp: 'lr 6/15/2010 23:39'!
 size
@@ -894,6 +754,49 @@ value
 
 	^ collection copyFrom: start to: stop! !
 
+!PPToken methodsFor: 'querying' stamp: 'lr 9/7/2011 20:40'!
+column
+	"Answer the column number of this token in the underlying collection."
+	
+	| position |
+	position := 0.
+	(NewLineParser , [ :stream |
+		start <= stream position
+			ifTrue: [ ^ start - position ].
+		position := stream position ] asParser
+		/ #any asParser) star
+			parse: collection.
+	 ^ start - position! !
+
+!PPToken methodsFor: 'querying' stamp: 'lr 9/7/2011 20:41'!
+line
+	"Answer the line number of this token in the underlying collection."
+	
+	| line |
+	line := 1.
+	(NewLineParser , [ :stream |
+		start <= stream position
+			ifTrue: [ ^ line ].
+		line := line + 1 ] asParser
+		/ #any asParser) star
+			parse: collection.
+	^ line! !
+
+!PPToken methodsFor: 'copying' stamp: 'lr 6/16/2008 10:55'!
+copyFrom: aStartInteger to: aStopInteger
+	^ self class on: collection start: start + aStartInteger - 1 stop: stop + aStopInteger - 3! !
+
+!PPToken methodsFor: 'initialization' stamp: 'lr 4/30/2010 12:13'!
+initializeOn: aSequenceableCollection start: aStartInteger stop: aStopInteger
+	collection := aSequenceableCollection.
+	start := aStartInteger.
+	stop := aStopInteger! !
+
+!PPToken methodsFor: 'printing' stamp: 'lr 6/16/2008 10:13'!
+printOn: aStream
+	super printOn: aStream.
+	aStream nextPut: $(; nextPutAll: self value; nextPut: $)! !
+
 !PPToken class methodsFor: 'initialization' stamp: 'pmon 6/1/2012 22:35'!
 initialize
 	"Platform independent newline sequence. LF: Unix, CR+LF: Windows, and CR: Apple."
@@ -914,6 +817,28 @@ on: aSequenceableCollection start: aStartInteger stop: aStopInteger
 		initializeOn: aSequenceableCollection
 		start: aStartInteger stop: aStopInteger! !
 
+!PPCharSetPredicate methodsFor: 'initialization' stamp: 'lr 8/30/2010 12:19'!
+initializeOn: aBlock
+	block := aBlock.
+	classification := Array new: 255.
+	1 to: classification size do: [ :index |
+		classification at: index put: (block
+			value: (Character value: index)) ]! !
+
+!PPCharSetPredicate methodsFor: 'evaluating' stamp: 'lr 8/30/2010 12:19'!
+value: aCharacter
+	| index |
+	index := aCharacter asInteger.
+	index == 0
+		ifTrue: [ ^ block value: aCharacter ].
+	index > 255
+		ifTrue: [ ^ block value: aCharacter ].
+	^ classification at: index! !
+
+!PPCharSetPredicate class methodsFor: 'instance creation' stamp: 'lr 8/25/2010 11:05'!
+on: aBlock
+	^ self basicNew initializeOn: aBlock! !
+
 !PPParser methodsFor: 'operators' stamp: 'lr 9/23/2008 18:32'!
 , aParser 
 	"Answer a new parser that parses the receiver followed by aParser."
@@ -925,18 +850,6 @@ on: aSequenceableCollection start: aStartInteger stop: aStopInteger
 	"Answer a new parser that parses the receiver, if the receiver fails try with aParser (ordered-choice)."
 	
 	^ PPChoiceParser with: self with: aParser! !
-
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 5/12/2010 20:32'!
-==> aBlock
-	"Answer a new parser that performs aBlock as action handler on success."
-
-	^ PPActionParser on: self block: aBlock! !
-
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 6/12/2010 10:20'!
->=> aBlock
-	"Answer a new parser that wraps the receiving parser with a two argument block. The first argument is the parsed stream, the second argument a continuation block on the delegate parser."
-
-	^ PPWrappingParser on: self block: aBlock! !
 
 !PPParser methodsFor: 'operators' stamp: 'lr 4/14/2010 11:53'!
 | aParser
@@ -950,44 +863,65 @@ and
 
 	^ PPAndParser on: self! !
 
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 2/19/2010 07:42'!
-answer: anObject
-	"Answer a new parser that always returns anObject from a successful parse."
-
-	^ self ==> [ :nodes | anObject ]! !
-
-!PPParser methodsFor: 'converting' stamp: 'lr 11/29/2011 20:48'!
-asParser
-	"Answer the receiving parser."
-	
-	^ self! !
-
-!PPParser methodsFor: 'accessing' stamp: 'lr 10/21/2009 16:38'!
-children
-	"Answer a set of child parsers that could follow the receiver."
-
-	^ #()! !
-
 !PPParser methodsFor: 'operators' stamp: 'lr 12/3/2010 11:34'!
 def: aParser
 	"Redefine the receiver as the argument aParser. This method is useful when defining recursive parsers: instantiate a PPUnresolvedParser and later redefine it with another one."
 
 	^ self becomeForward: (aParser name: self name)! !
 
-!PPParser methodsFor: 'operators-convenience' stamp: 'lr 2/19/2010 07:42'!
-delimitedBy: aParser
-	"Answer a new parser that parses the receiver one or more times, separated and possibly ended by aParser."
-	
-	^ (self separatedBy: aParser) , (aParser optional) ==> [ :node |
-		node second isNil
-			ifTrue: [ node first ]
-			ifFalse: [ node first copyWith: node second ] ]! !
-
 !PPParser methodsFor: 'operators' stamp: 'lr 4/30/2010 12:13'!
 end
 	"Answer a new parser that succeeds at the end of the input and return the result of the receiver."
 
 	^ PPEndOfInputParser on: self! !
+
+!PPParser methodsFor: 'operators' stamp: 'lr 5/31/2010 16:34'!
+memoized
+	"Answer a new memoized parser, for refraining redundant computations. This ensures polynomial time O(n^4) for left-recursive grammars and O(n^3) for non left-recursive grammars in the worst case. Not necessary for most grammars that are carefully written and in O(n) anyway."
+	
+	^ PPMemoizedParser on: self! !
+
+!PPParser methodsFor: 'operators' stamp: 'lr 2/19/2010 07:36'!
+negate
+	"Answer a new parser consumes any input token but the receiver."
+	
+	^ self not , #any asParser ==> #second! !
+
+!PPParser methodsFor: 'operators' stamp: 'lr 5/31/2010 15:12'!
+not
+	"Answer a new parser (logical not-predicate) that succeeds whenever the receiver fails, but never consumes input."
+
+	^ PPNotParser on: self! !
+
+!PPParser methodsFor: 'operators' stamp: 'lr 9/1/2010 22:03'!
+optional
+	"Answer a new parser that parses the receiver, if possible."
+
+	^ PPOptionalParser on: self! !
+
+!PPParser methodsFor: 'operators' stamp: 'lr 10/23/2008 14:05'!
+wrapped
+	"Answer a new parser that is simply wrapped."
+	
+	^ PPDelegateParser on: self! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 5/12/2010 20:32'!
+==> aBlock
+	"Answer a new parser that performs aBlock as action handler on success."
+
+	^ PPActionParser on: self block: aBlock! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 6/12/2010 10:20'!
+>=> aBlock
+	"Answer a new parser that wraps the receiving parser with a two argument block. The first argument is the parsed stream, the second argument a continuation block on the delegate parser."
+
+	^ PPWrappingParser on: self block: aBlock! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 2/19/2010 07:42'!
+answer: anObject
+	"Answer a new parser that always returns anObject from a successful parse."
+
+	^ self ==> [ :nodes | anObject ]! !
 
 !PPParser methodsFor: 'operators-mapping' stamp: 'lr 5/15/2008 16:08'!
 flatten
@@ -1025,11 +959,152 @@ foldRight: aBlock
 				at: size put: (aBlock valueWithArguments: args) ].
 		args at: size ]! !
 
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 5/6/2011 20:28'!
+map: aBlock
+	"Answer a new parser that works on the receiving sequence an passes in each element as a block argument."
+	
+	^ aBlock numArgs = 1
+		ifTrue: [ self ==> aBlock ]
+		ifFalse: [ self error: aBlock numArgs asString , ' arguments expected.' ]
+! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 6/29/2010 14:25'!
+token
+	"Answer a new parser that transforms the input to a token."
+	
+	^ PPTokenParser on: self! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 4/6/2010 19:26'!
+token: aTokenClass
+	"Answer a new parser that transforms the input to a token of class aTokenClass."
+	
+	^ self token tokenClass: aTokenClass! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/31/2010 12:06'!
+trim
+	"Answer a new parser that consumes spaces before and after the receiving parser."
+	
+	^ self trimSpaces! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/11/2011 11:03'!
+trim: aParser
+	"Answer a new parser that consumes and ignores aParser repeatedly before and after the receiving parser."
+	
+	^ PPTrimmingParser on: self trimmer: aParser! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/11/2011 11:03'!
+trimBlanks
+	"Answer a new parser that consumes blanks before and after the receiving parser."
+	
+	^ self trim: #blank asParser! !
+
+!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/11/2011 11:03'!
+trimSpaces
+	"Answer a new parser that consumes spaces before and after the receiving parser."
+	
+	^ self trim: #space asParser! !
+
+!PPParser methodsFor: 'converting' stamp: 'lr 11/29/2011 20:48'!
+asParser
+	"Answer the receiving parser."
+	
+	^ self! !
+
+!PPParser methodsFor: 'accessing' stamp: 'lr 10/21/2009 16:38'!
+children
+	"Answer a set of child parsers that could follow the receiver."
+
+	^ #()! !
+
+!PPParser methodsFor: 'accessing' stamp: 'lr 4/19/2010 10:35'!
+name
+	"Answer the production name of the receiver."
+	
+	^ self propertyAt: #name ifAbsent: [ nil ]! !
+
+!PPParser methodsFor: 'accessing' stamp: 'lr 4/19/2010 10:38'!
+name: aString
+	self propertyAt: #name put: aString! !
+
+!PPParser methodsFor: 'operators-convenience' stamp: 'lr 2/19/2010 07:42'!
+delimitedBy: aParser
+	"Answer a new parser that parses the receiver one or more times, separated and possibly ended by aParser."
+	
+	^ (self separatedBy: aParser) , (aParser optional) ==> [ :node |
+		node second isNil
+			ifTrue: [ node first ]
+			ifFalse: [ node first copyWith: node second ] ]! !
+
+!PPParser methodsFor: 'operators-convenience' stamp: 'lr 2/19/2010 07:56'!
+separatedBy: aParser
+	"Answer a new parser that parses the receiver one or more times, separated by aParser."
+	
+	^ (PPSequenceParser with: self with: (PPSequenceParser with: aParser with: self) star) ==> [ :nodes |
+		| result |
+		result := Array new: 2 * nodes second size + 1.
+		result at: 1 put: nodes first.
+		nodes second 
+			keysAndValuesDo: [ :index :pair | result replaceFrom: 2 * index to: 2 * index + 1 with: pair startingAt: 1 ].
+		result ]! !
+
+!PPParser methodsFor: 'operators-convenience' stamp: 'lr 2/25/2012 16:54'!
+withoutSeparators
+	"Filters out the separators from a parse result produced by one of the productions #delimitedBy: or #separatedBy:."
+	
+	^ self ==> [ :items |
+		| result |
+		result := Array new: items size + 1 // 2.
+		1 to: result size do: [ :index | result at: index put: (items at: 2 * index - 1) ].
+		result ]! !
+
 !PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:32'!
 hasProperty: aKey
 	"Test if the property aKey is present."
 	
 	^ properties notNil and: [ properties includesKey: aKey ]! !
+
+!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:32'!
+propertyAt: aKey
+	"Answer the property value associated with aKey."
+	
+	^ self propertyAt: aKey ifAbsent: [ self error: 'Property not found' ]! !
+
+!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:32'!
+propertyAt: aKey ifAbsent: aBlock
+	"Answer the property value associated with aKey or, if aKey isn't found, answer the result of evaluating aBlock."
+	
+	^ properties isNil
+		ifTrue: [ aBlock value ]
+		ifFalse: [ properties at: aKey ifAbsent: aBlock ]! !
+
+!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:32'!
+propertyAt: aKey ifAbsentPut: aBlock
+	"Answer the property associated with aKey or, if aKey isn't found store the result of evaluating aBlock as new value."
+	
+	^ self propertyAt: aKey ifAbsent: [ self propertyAt: aKey put: aBlock value ]! !
+
+!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:33'!
+propertyAt: aKey put: anObject
+	"Set the property at aKey to be anObject. If aKey is not found, create a new entry for aKey and set is value to anObject. Answer anObject."
+
+	^ (properties ifNil: [ properties := Dictionary new: 1 ])
+		at: aKey put: anObject! !
+
+!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:33'!
+removeProperty: aKey
+	"Remove the property with aKey. Answer the property or raise an error if aKey isn't found."
+	
+	^ self removeProperty: aKey ifAbsent: [ self error: 'Property not found' ]! !
+
+!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:33'!
+removeProperty: aKey ifAbsent: aBlock
+	"Remove the property with aKey. Answer the value or, if aKey isn't found, answer the result of evaluating aBlock."
+	
+	| answer |
+	properties isNil ifTrue: [ ^ aBlock value ].
+	answer := properties removeKey: aKey ifAbsent: aBlock.
+	properties isEmpty ifTrue: [ properties := nil ].
+	^ answer! !
 
 !PPParser methodsFor: 'initialization' stamp: 'lr 4/24/2008 10:33'!
 initialize! !
@@ -1041,15 +1116,6 @@ isPetitParser
 !PPParser methodsFor: 'testing' stamp: 'lr 10/27/2008 11:28'!
 isUnresolved
 	^ false! !
-
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 5/6/2011 20:28'!
-map: aBlock
-	"Answer a new parser that works on the receiving sequence an passes in each element as a block argument."
-	
-	^ aBlock numArgs = 1
-		ifTrue: [ self ==> aBlock ]
-		ifFalse: [ self error: aBlock numArgs asString , ' arguments expected.' ]
-! !
 
 !PPParser methodsFor: 'parsing' stamp: 'lr 2/8/2010 00:30'!
 matches: anObject
@@ -1129,6 +1195,32 @@ matchingSkipRangesIn: anObject do: aBlock
 		matchesSkipIn: anObject
 		do: [ :value | aBlock value: (value first to: value last) ]! !
 
+!PPParser methodsFor: 'parsing' stamp: 'lr 2/7/2010 20:53'!
+parse: anObject
+	"Parse anObject with the receiving parser and answer the parse-result or an instance of PPFailure."
+	
+	^ self parseOn: anObject asPetitStream! !
+
+!PPParser methodsFor: 'parsing' stamp: 'lr 10/29/2010 17:05'!
+parse: anObject onError: aBlock
+	"Parse anObject with the receiving parser and answer the parse-result or answer the result of evaluating aBlock. Depending on the number of arguments of the block it is simply evaluated, evaluated with the failure object, or evaluated with the error message and position."
+	
+	| result |
+	result := self parse: anObject.
+	result isPetitFailure
+		ifFalse: [ ^ result ].
+	aBlock numArgs = 0
+		ifTrue: [ ^ aBlock value ].
+	aBlock numArgs = 1
+		ifTrue: [ ^ aBlock value: result ].
+	^ aBlock value: result message value: result position! !
+
+!PPParser methodsFor: 'parsing' stamp: 'lr 2/7/2010 22:18'!
+parseOn: aStream
+	"Parse aStream with the receiving parser and answer the parse-result or an instance of PPFailure. Override this method in subclasses to specify custom parse behavior. Do not call this method from outside, instead use #parse:."
+	
+	self subclassResponsibility! !
+
 !PPParser methodsFor: 'operators-repeating' stamp: 'lr 4/1/2011 21:03'!
 max: anInteger
 	"Answer a new parser that parses the receiver at most anInteger times."
@@ -1146,12 +1238,6 @@ max: anInteger lazy: aParser
 	"Answer a new parser that parses the receiver at most anInteger times until it reaches aParser. This is a lazy non-blind implementation. aParser is not consumed."
 	
 	^ (self starLazy: aParser) setMax: anInteger! !
-
-!PPParser methodsFor: 'operators' stamp: 'lr 5/31/2010 16:34'!
-memoized
-	"Answer a new memoized parser, for refraining redundant computations. This ensures polynomial time O(n^4) for left-recursive grammars and O(n^3) for non left-recursive grammars in the worst case. Not necessary for most grammars that are carefully written and in O(n) anyway."
-	
-	^ PPMemoizedParser on: self! !
 
 !PPParser methodsFor: 'operators-repeating' stamp: 'lr 4/1/2011 21:02'!
 min: anInteger
@@ -1189,60 +1275,6 @@ min: aMinInteger max: aMaxInteger lazy: aParser
 	
 	^ (self starLazy: aParser) setMin: aMinInteger; setMax: aMaxInteger! !
 
-!PPParser methodsFor: 'accessing' stamp: 'lr 4/19/2010 10:35'!
-name
-	"Answer the production name of the receiver."
-	
-	^ self propertyAt: #name ifAbsent: [ nil ]! !
-
-!PPParser methodsFor: 'accessing' stamp: 'lr 4/19/2010 10:38'!
-name: aString
-	self propertyAt: #name put: aString! !
-
-!PPParser methodsFor: 'operators' stamp: 'lr 2/19/2010 07:36'!
-negate
-	"Answer a new parser consumes any input token but the receiver."
-	
-	^ self not , #any asParser ==> #second! !
-
-!PPParser methodsFor: 'operators' stamp: 'lr 5/31/2010 15:12'!
-not
-	"Answer a new parser (logical not-predicate) that succeeds whenever the receiver fails, but never consumes input."
-
-	^ PPNotParser on: self! !
-
-!PPParser methodsFor: 'operators' stamp: 'lr 9/1/2010 22:03'!
-optional
-	"Answer a new parser that parses the receiver, if possible."
-
-	^ PPOptionalParser on: self! !
-
-!PPParser methodsFor: 'parsing' stamp: 'lr 2/7/2010 20:53'!
-parse: anObject
-	"Parse anObject with the receiving parser and answer the parse-result or an instance of PPFailure."
-	
-	^ self parseOn: anObject asPetitStream! !
-
-!PPParser methodsFor: 'parsing' stamp: 'lr 10/29/2010 17:05'!
-parse: anObject onError: aBlock
-	"Parse anObject with the receiving parser and answer the parse-result or answer the result of evaluating aBlock. Depending on the number of arguments of the block it is simply evaluated, evaluated with the failure object, or evaluated with the error message and position."
-	
-	| result |
-	result := self parse: anObject.
-	result isPetitFailure
-		ifFalse: [ ^ result ].
-	aBlock numArgs = 0
-		ifTrue: [ ^ aBlock value ].
-	aBlock numArgs = 1
-		ifTrue: [ ^ aBlock value: result ].
-	^ aBlock value: result message value: result position! !
-
-!PPParser methodsFor: 'parsing' stamp: 'lr 2/7/2010 22:18'!
-parseOn: aStream
-	"Parse aStream with the receiving parser and answer the parse-result or an instance of PPFailure. Override this method in subclasses to specify custom parse behavior. Do not call this method from outside, instead use #parse:."
-	
-	self subclassResponsibility! !
-
 !PPParser methodsFor: 'operators-repeating' stamp: 'lr 4/1/2011 21:03'!
 plus
 	"Answer a new parser that parses the receiver one or more times."
@@ -1260,79 +1292,6 @@ plusLazy: aParser
 	"Answer a new parser that parses the receiver one or more times until it reaches aParser. This is a lazy non-blind implementation of the star operator. aParser is not consumed."
 	
 	^ (self starLazy: aParser) setMin: 1! !
-
-!PPParser methodsFor: 'copying' stamp: 'lr 4/19/2010 10:33'!
-postCopy
-	super postCopy.
-	properties := properties copy! !
-
-!PPParser methodsFor: 'printing' stamp: 'lr 4/16/2010 16:36'!
-printNameOn: aStream
-	self name isNil
-		ifTrue: [ aStream print: self hash ]
-		ifFalse: [ aStream nextPutAll: self name ]! !
-
-!PPParser methodsFor: 'printing' stamp: 'lr 4/16/2010 16:36'!
-printOn: aStream
-	super printOn: aStream.
-	aStream nextPut: $(.
-	self printNameOn: aStream.
-	aStream nextPut: $)! !
-
-!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:32'!
-propertyAt: aKey
-	"Answer the property value associated with aKey."
-	
-	^ self propertyAt: aKey ifAbsent: [ self error: 'Property not found' ]! !
-
-!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:32'!
-propertyAt: aKey ifAbsent: aBlock
-	"Answer the property value associated with aKey or, if aKey isn't found, answer the result of evaluating aBlock."
-	
-	^ properties isNil
-		ifTrue: [ aBlock value ]
-		ifFalse: [ properties at: aKey ifAbsent: aBlock ]! !
-
-!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:32'!
-propertyAt: aKey ifAbsentPut: aBlock
-	"Answer the property associated with aKey or, if aKey isn't found store the result of evaluating aBlock as new value."
-	
-	^ self propertyAt: aKey ifAbsent: [ self propertyAt: aKey put: aBlock value ]! !
-
-!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:33'!
-propertyAt: aKey put: anObject
-	"Set the property at aKey to be anObject. If aKey is not found, create a new entry for aKey and set is value to anObject. Answer anObject."
-
-	^ (properties ifNil: [ properties := Dictionary new: 1 ])
-		at: aKey put: anObject! !
-
-!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:33'!
-removeProperty: aKey
-	"Remove the property with aKey. Answer the property or raise an error if aKey isn't found."
-	
-	^ self removeProperty: aKey ifAbsent: [ self error: 'Property not found' ]! !
-
-!PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:33'!
-removeProperty: aKey ifAbsent: aBlock
-	"Remove the property with aKey. Answer the value or, if aKey isn't found, answer the result of evaluating aBlock."
-	
-	| answer |
-	properties isNil ifTrue: [ ^ aBlock value ].
-	answer := properties removeKey: aKey ifAbsent: aBlock.
-	properties isEmpty ifTrue: [ properties := nil ].
-	^ answer! !
-
-!PPParser methodsFor: 'operators-convenience' stamp: 'lr 2/19/2010 07:56'!
-separatedBy: aParser
-	"Answer a new parser that parses the receiver one or more times, separated by aParser."
-	
-	^ (PPSequenceParser with: self with: (PPSequenceParser with: aParser with: self) star) ==> [ :nodes |
-		| result |
-		result := Array new: 2 * nodes second size + 1.
-		result at: 1 put: nodes first.
-		nodes second 
-			keysAndValuesDo: [ :index :pair | result replaceFrom: 2 * index to: 2 * index + 1 with: pair startingAt: 1 ].
-		result ]! !
 
 !PPParser methodsFor: 'operators-repeating' stamp: 'lr 4/2/2011 10:02'!
 star
@@ -1358,57 +1317,23 @@ times: anInteger
 	
 	^ self min: anInteger max: anInteger! !
 
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 6/29/2010 14:25'!
-token
-	"Answer a new parser that transforms the input to a token."
-	
-	^ PPTokenParser on: self! !
+!PPParser methodsFor: 'copying' stamp: 'lr 4/19/2010 10:33'!
+postCopy
+	super postCopy.
+	properties := properties copy! !
 
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 4/6/2010 19:26'!
-token: aTokenClass
-	"Answer a new parser that transforms the input to a token of class aTokenClass."
-	
-	^ self token tokenClass: aTokenClass! !
+!PPParser methodsFor: 'printing' stamp: 'lr 4/16/2010 16:36'!
+printNameOn: aStream
+	self name isNil
+		ifTrue: [ aStream print: self hash ]
+		ifFalse: [ aStream nextPutAll: self name ]! !
 
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/31/2010 12:06'!
-trim
-	"Answer a new parser that consumes spaces before and after the receiving parser."
-	
-	^ self trimSpaces! !
-
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/11/2011 11:03'!
-trim: aParser
-	"Answer a new parser that consumes and ignores aParser repeatedly before and after the receiving parser."
-	
-	^ PPTrimmingParser on: self trimmer: aParser! !
-
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/11/2011 11:03'!
-trimBlanks
-	"Answer a new parser that consumes blanks before and after the receiving parser."
-	
-	^ self trim: #blank asParser! !
-
-!PPParser methodsFor: 'operators-mapping' stamp: 'lr 7/11/2011 11:03'!
-trimSpaces
-	"Answer a new parser that consumes spaces before and after the receiving parser."
-	
-	^ self trim: #space asParser! !
-
-!PPParser methodsFor: 'operators-convenience' stamp: 'lr 2/25/2012 16:54'!
-withoutSeparators
-	"Filters out the separators from a parse result produced by one of the productions #delimitedBy: or #separatedBy:."
-	
-	^ self ==> [ :items |
-		| result |
-		result := Array new: items size + 1 // 2.
-		1 to: result size do: [ :index | result at: index put: (items at: 2 * index - 1) ].
-		result ]! !
-
-!PPParser methodsFor: 'operators' stamp: 'lr 10/23/2008 14:05'!
-wrapped
-	"Answer a new parser that is simply wrapped."
-	
-	^ PPDelegateParser on: self! !
+!PPParser methodsFor: 'printing' stamp: 'lr 4/16/2010 16:36'!
+printOn: aStream
+	super printOn: aStream.
+	aStream nextPut: $(.
+	self printNameOn: aStream.
+	aStream nextPut: $)! !
 
 !PPParser class methodsFor: 'instance creation' stamp: 'lr 10/27/2008 11:17'!
 named: aString
@@ -1497,6 +1422,12 @@ ignoredNames
 
 	^ PPCompositeParser allInstVarNames! !
 
+!PPCompositeParser class methodsFor: 'accessing' stamp: 'lr 12/7/2009 08:20'!
+startSymbol
+	"Answer the method that represents the default start symbol."
+
+	^ #start! !
+
 !PPCompositeParser class methodsFor: 'instance creation' stamp: 'lr 12/7/2009 08:24'!
 new
 	"Answer a new parser starting at the default start symbol."
@@ -1524,12 +1455,6 @@ parse: anObject startingAt: aSymbol
 !PPCompositeParser class methodsFor: 'parsing' stamp: 'lr 2/7/2010 21:02'!
 parse: anObject startingAt: aSymbol onError: aBlock
 	^ (self newStartingAt: aSymbol) parse: anObject onError: aBlock! !
-
-!PPCompositeParser class methodsFor: 'accessing' stamp: 'lr 12/7/2009 08:20'!
-startSymbol
-	"Answer the method that represents the default start symbol."
-
-	^ #start! !
 
 !PPExpressionParser methodsFor: 'private' stamp: 'FirstnameLastname 11/26/2009 20:48'!
 build: aParser left: aChoiceParser
@@ -1568,6 +1493,15 @@ buildOn: aParser
 buildSelectors
 	^ #(build:prefix: build:postfix: build:right: build:left:)! !
 
+!PPExpressionParser methodsFor: 'private' stamp: 'lr 2/7/2010 23:23'!
+operator: aSymbol parser: aParser do: aBlock
+	parser isNil
+		ifTrue: [ ^ self error: 'You did not specify a term when creating the receiver.' ].
+	operators isNil
+		ifTrue: [ ^ self error: 'Use #group: to define precedence groups in descending order.' ].
+	(operators at: aSymbol ifAbsentPut: [ OrderedCollection new ])
+		addLast: (Array with: aParser asParser with: aBlock)! !
+
 !PPExpressionParser methodsFor: 'specifying' stamp: 'lr 2/7/2010 23:20'!
 group: aOneArgumentBlock
 	"Defines a priority group by evaluating aOneArgumentBlock."
@@ -1583,15 +1517,6 @@ left: aParser do: aThreeArgumentBlock
 	"Define an operator aParser that is left-associative. Evaluate aThreeArgumentBlock with the first term, the operator, and the second term."
 	
 	self operator: #build:left: parser: aParser do: aThreeArgumentBlock! !
-
-!PPExpressionParser methodsFor: 'private' stamp: 'lr 2/7/2010 23:23'!
-operator: aSymbol parser: aParser do: aBlock
-	parser isNil
-		ifTrue: [ ^ self error: 'You did not specify a term when creating the receiver.' ].
-	operators isNil
-		ifTrue: [ ^ self error: 'Use #group: to define precedence groups in descending order.' ].
-	(operators at: aSymbol ifAbsentPut: [ OrderedCollection new ])
-		addLast: (Array with: aParser asParser with: aBlock)! !
 
 !PPExpressionParser methodsFor: 'specifying' stamp: 'FirstnameLastname 11/26/2009 20:49'!
 postfix: aParser do: aTwoArgumentBlock
@@ -1758,6 +1683,14 @@ initialize
 	super initialize.
 	self setMin: 0; setMax: SmallInteger maxVal! !
 
+!PPRepeatingParser methodsFor: 'initialization' stamp: 'lr 4/1/2011 21:00'!
+setMax: anInteger
+	max := anInteger! !
+
+!PPRepeatingParser methodsFor: 'initialization' stamp: 'lr 4/1/2011 21:01'!
+setMin: anInteger
+	min := anInteger! !
+
 !PPRepeatingParser methodsFor: 'accessing' stamp: 'lr 4/30/2010 11:08'!
 max
 	"Answer the maximum number of repetitions."
@@ -1775,14 +1708,6 @@ printOn: aStream
 	super printOn: aStream.
 	aStream nextPutAll: ' ['; print: min; nextPutAll: ', '; nextPutAll: (max = SmallInteger maxVal
 		ifTrue: [ '*' ] ifFalse: [ max printString ]); nextPut: $]! !
-
-!PPRepeatingParser methodsFor: 'initialization' stamp: 'lr 4/1/2011 21:00'!
-setMax: anInteger
-	max := anInteger! !
-
-!PPRepeatingParser methodsFor: 'initialization' stamp: 'lr 4/1/2011 21:01'!
-setMin: anInteger
-	min := anInteger! !
 
 !PPLimitedRepeatingParser methodsFor: 'accessing' stamp: 'lr 4/4/2011 18:46'!
 children
@@ -1935,15 +1860,15 @@ children
 copyWith: aParser
 	^ self species withAll: (parsers copyWith: aParser)! !
 
-!PPListParser methodsFor: 'initialization' stamp: 'lr 4/29/2010 10:12'!
-initialize
-	super initialize.
-	self setParsers: #()! !
-
 !PPListParser methodsFor: 'copying' stamp: 'lr 5/22/2010 10:26'!
 postCopy
 	super postCopy.
 	parsers := parsers copy! !
+
+!PPListParser methodsFor: 'initialization' stamp: 'lr 4/29/2010 10:12'!
+initialize
+	super initialize.
+	self setParsers: #()! !
 
 !PPListParser methodsFor: 'initialization' stamp: 'lr 4/29/2010 10:12'!
 setParsers: aCollection
@@ -1987,6 +1912,15 @@ map: aBlock
 		ifTrue: [ self ==> [ :nodes | aBlock valueWithArguments: nodes ] ]
 		ifFalse: [ self error: aBlock numArgs asString , ' arguments expected.' ]! !
 
+!PPSequenceParser methodsFor: 'operators-mapping' stamp: 'lr 1/8/2010 12:01'!
+permutation: anArrayOfIntegers
+	"Answer a permutation of the receivers sequence."
+	
+	anArrayOfIntegers do: [ :index |
+		(index isInteger and: [ index between: 1 and: parsers size ])
+			ifFalse: [ self error: 'Invalid permutation index: ' , index printString ] ].
+	^ self ==> [ :nodes | anArrayOfIntegers collect: [ :index | nodes at: index ] ]! !
+
 !PPSequenceParser methodsFor: 'parsing' stamp: 'lr 5/6/2010 10:47'!
 parseOn: aStream
 	"This is optimized code that avoids unnecessary block activations, do not change."
@@ -2002,15 +1936,6 @@ parseOn: aStream
 			^ element ].
 		elements at: index put: element ].
 	^ elements! !
-
-!PPSequenceParser methodsFor: 'operators-mapping' stamp: 'lr 1/8/2010 12:01'!
-permutation: anArrayOfIntegers
-	"Answer a permutation of the receivers sequence."
-	
-	anArrayOfIntegers do: [ :index |
-		(index isInteger and: [ index between: 1 and: parsers size ])
-			ifFalse: [ self error: 'Invalid permutation index: ' , index printString ] ].
-	^ self ==> [ :nodes | anArrayOfIntegers collect: [ :index | nodes at: index ] ]! !
 
 !PPLiteralParser methodsFor: 'operators' stamp: 'lr 6/1/2010 22:24'!
 caseInsensitive
@@ -2177,6 +2102,16 @@ between: min and: max
 		on: [ :each | each >= min and: [ each <= max ] ] message: min printString , '..' , max printString , ' expected'
 		negated: [ :each | each < min or: [ each > max ] ] message: min printString , '..' , max printString , ' not expected'! !
 
+!PPPredicateObjectParser class methodsFor: 'factory-objects' stamp: 'lr 8/25/2010 10:57'!
+expect: anObject
+	^ self expect: anObject message: anObject printString , ' expected'! !
+
+!PPPredicateObjectParser class methodsFor: 'factory-objects' stamp: 'lr 8/25/2010 10:57'!
+expect: anObject message: aString
+	^ self 
+		on: [ :each | each = anObject ] message: aString
+		negated: [ :each | each ~= anObject ] message: 'no ' , aString! !
+
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:02'!
 blank
 	^ self chars: (String with: Character space with: Character tab) message: 'blank expected'! !
@@ -2200,16 +2135,6 @@ cr
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:06'!
 digit
 	^ self on: (PPCharSetPredicate on: [ :char | char isDigit ]) message: 'digit expected'! !
-
-!PPPredicateObjectParser class methodsFor: 'factory-objects' stamp: 'lr 8/25/2010 10:57'!
-expect: anObject
-	^ self expect: anObject message: anObject printString , ' expected'! !
-
-!PPPredicateObjectParser class methodsFor: 'factory-objects' stamp: 'lr 8/25/2010 10:57'!
-expect: anObject message: aString
-	^ self 
-		on: [ :each | each = anObject ] message: aString
-		negated: [ :each | each ~= anObject ] message: 'no ' , aString! !
 
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:06'!
 hex
@@ -2236,14 +2161,6 @@ lowercase
 newline
 	^ self chars: (String with: Character crCharacter with: Character lfCharacter) message: 'newline expected'! !
 
-!PPPredicateObjectParser class methodsFor: 'instance creation' stamp: 'lr 6/12/2010 09:10'!
-on: aBlock message: aString
-	^ self on: aBlock message: aString negated: [ :each | (aBlock value: each) not ] message: 'no ' , aString! !
-
-!PPPredicateObjectParser class methodsFor: 'instance creation' stamp: 'lr 6/12/2010 09:10'!
-on: aBlock message: aString negated: aNegatedBlock message: aNegatedString
-	^ self new initializeOn: aBlock message: aString negated: aNegatedBlock message: aNegatedString! !
-
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:04'!
 punctuation
 	^ self chars: '.,"''?!!;:#$%&()*+-/<>=@[]\^_{}|~' message: 'punctuation expected'! !
@@ -2263,6 +2180,14 @@ uppercase
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:06'!
 word
 	^ self on: (PPCharSetPredicate on: [ :char | char isAlphaNumeric ]) message: 'letter or digit expected'! !
+
+!PPPredicateObjectParser class methodsFor: 'instance creation' stamp: 'lr 6/12/2010 09:10'!
+on: aBlock message: aString
+	^ self on: aBlock message: aString negated: [ :each | (aBlock value: each) not ] message: 'no ' , aString! !
+
+!PPPredicateObjectParser class methodsFor: 'instance creation' stamp: 'lr 6/12/2010 09:10'!
+on: aBlock message: aString negated: aNegatedBlock message: aNegatedString
+	^ self new initializeOn: aBlock message: aString negated: aNegatedBlock message: aNegatedString! !
 
 !PPPredicateSequenceParser methodsFor: 'initialization' stamp: 'lr 6/12/2010 09:13'!
 initializeOn: aBlock message: aString negated: aNegatedBlock message: aNegatedString size: anInteger
@@ -2304,4 +2229,108 @@ on: aBlock message: aString negated: aNegatedBlock message: aNegatedString size:
 !PPPredicateSequenceParser class methodsFor: 'instance creation' stamp: 'lr 6/12/2010 09:14'!
 on: aBlock message: aString size: anInteger
 	^ self on: aBlock message: aString negated: [ :each | (aBlock value: each) not ] message: 'no ' , aString size: anInteger ! !
+
+!Object methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:58'!
+asParser
+	"Answer a parser accepting the receiving object."
+
+	^ PPPredicateObjectParser expect: self! !
+
+!Object methodsFor: '*petitparser-core-testing' stamp: 'lr 2/7/2010 20:54'!
+isPetitFailure
+	^ false! !
+
+!Object methodsFor: '*petitparser-core-testing' stamp: 'lr 8/6/2010 16:44'!
+isPetitParser
+	^ false! !
+
+!UndefinedObject methodsFor: '*petitparser-converting' stamp: 'lr 11/29/2011 20:49'!
+asParser
+	"Answer a parser that succeeds and does not consume anything."
+	
+	^ PPEpsilonParser new! !
+
+!Character methodsFor: '*petitparser-core-operators' stamp: 'lr 6/12/2010 09:04'!
+- aCharacter
+	"Create a range of characters between the receiver and the argument."
+	
+	^ PPPredicateObjectParser between: self and: aCharacter! !
+
+!Character methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:58'!
+asParser
+	"Answer a parser that accepts the receiving character."
+	
+	^ PPLiteralObjectParser on: self! !
+
+!UnicodeCodePoint methodsFor: '*petitparser-core-operators' stamp: 'jmv 10/31/2022 17:43:54'!
+- aCharacter
+	"Create a range of characters between the receiver and the argument."
+	
+	^ PPPredicateObjectParser between: self and: aCharacter! !
+
+!UnicodeCodePoint methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 17:44:08'!
+asParser
+	"Answer a parser that accepts the receiving character."
+	
+	^ PPLiteralObjectParser on: self! !
+
+!BlockClosure methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:48'!
+asParser
+	"Answer a parser implemented in the receiving one-argument block."
+
+	^ PPPluggableParser on: self! !
+
+!Collection methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:38'!
+asChoiceParser
+	^ PPChoiceParser withAll: (self collect: [ :each | each asParser ])! !
+
+!Collection methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:38'!
+asSequenceParser
+	^ PPSequenceParser withAll: (self collect: [ :each | each asParser ])! !
+
+!SequenceableCollection methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:57'!
+asParser
+	self notify: 'SequenceableCollection>>#asParser is no longer supported. If you would like to create a PPSequenceParser from a Collection consider using #asSequenceParser instead.'.
+	^ self asSequenceParser! !
+
+!SequenceableCollection methodsFor: '*petitparser-core-converting' stamp: 'lr 2/7/2010 20:53'!
+asPetitStream
+	^ PPStream on: self! !
+
+!String methodsFor: '*petitparser-core-converting' stamp: 'lr 11/29/2011 20:48'!
+asParser
+	"Answer a parser that accepts the receiving string."
+
+	^ PPLiteralSequenceParser on: self! !
+
+!Symbol methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:58'!
+asParser
+	"Answer a predicate parser named after the receiving symbol. Possible symbols are the method selectors on the class-side of PPPredicateObjectParser."
+
+	^ PPPredicateObjectParser perform: self! !
+
+!Utf8String methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 17:46:45'!
+asParser
+	"Answer a parser that accepts the receiving string."
+
+	^ PPLiteralSequenceParser on: self! !
+
+!Utf8Symbol methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 18:06:00'!
+asParser
+	"Answer a predicate parser named after the receiving symbol. Possible symbols are the method selectors on the class-side of PPPredicateObjectParser."
+
+	^ PPPredicateObjectParser perform: self! !
+
+!Text methodsFor: '*petitparser-core-converting' stamp: 'lr 2/7/2010 20:53'!
+asPetitStream
+	^ string asPetitStream! !
+
+!Set methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:57'!
+asParser
+	self notify: 'Set>>#asParser is no longer supported. If you would like to create a PPChoiceParser from a Collection consider using #asChoiceParser instead. Sets have a unpredictable order and should be avoided'.
+	^ self asChoiceParser! !
+
+!Stream methodsFor: '*petitparser-core-converting' stamp: 'lr 4/8/2010 14:46'!
+asPetitStream
+	^ self contents asPetitStream! !
 PPToken initialize!
