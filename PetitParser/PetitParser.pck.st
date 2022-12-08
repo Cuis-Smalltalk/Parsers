@@ -1,7 +1,7 @@
 'From Cuis 6.0 [latest update: #5546] on 31 October 2022 at 6:14:39 pm'!
 'Description Please enter a description for this package '!
-!provides: 'PetitParser' 1 3!
-!requires: 'SqueakCompatibility' 1 27 nil!
+!provides: 'PetitParser' 1 4!
+!requires: 'SqueakCompatibility' 1 37 nil!
 SystemOrganization addCategory: 'PetitParser-Core'!
 SystemOrganization addCategory: 'PetitParser-Tools'!
 SystemOrganization addCategory: 'PetitParser-Parsers'!
@@ -2309,13 +2309,13 @@ asParser
 
 	^ PPPredicateObjectParser perform: self! !
 
-!Utf8String methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 17:46:45'!
+!UnicodeString methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 17:46:45'!
 asParser
 	"Answer a parser that accepts the receiving string."
 
 	^ PPLiteralSequenceParser on: self! !
 
-!Utf8Symbol methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 18:06:00'!
+!UnicodeSymbol methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 18:06:00'!
 asParser
 	"Answer a predicate parser named after the receiving symbol. Possible symbols are the method selectors on the class-side of PPPredicateObjectParser."
 
