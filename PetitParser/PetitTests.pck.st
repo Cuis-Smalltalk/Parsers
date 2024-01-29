@@ -1,159 +1,159 @@
-'From Cuis 5.0 [latest update: #4519] on 6 January 2021 at 12:02:16 pm'!
+'From Cuis6.3 [latest update: #6200] on 29 January 2024 at 4:36:16 pm'!
 'Description Please enter a description for this package '!
-!provides: 'PetitTests' 1 2!
+!provides: 'PetitTests' 1 3!
 !requires: 'PetitParser' 1 2 nil!
-SystemOrganization addCategory: 'PetitTests-Core'!
-SystemOrganization addCategory: 'PetitTests-Examples'!
-SystemOrganization addCategory: 'PetitTests-Tests'!
+SystemOrganization addCategory: #'PetitTests-Core'!
+SystemOrganization addCategory: #'PetitTests-Examples'!
+SystemOrganization addCategory: #'PetitTests-Tests'!
 
 
-!classDefinition: #PPAbstractParserTest category: 'PetitTests-Core'!
+!classDefinition: #PPAbstractParserTest category: #'PetitTests-Core'!
 TestCase subclass: #PPAbstractParserTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Core'!
-!classDefinition: 'PPAbstractParserTest class' category: 'PetitTests-Core'!
+!classDefinition: 'PPAbstractParserTest class' category: #'PetitTests-Core'!
 PPAbstractParserTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPCompositeParserTest category: 'PetitTests-Core'!
+!classDefinition: #PPCompositeParserTest category: #'PetitTests-Core'!
 PPAbstractParserTest subclass: #PPCompositeParserTest
 	instanceVariableNames: 'parser result'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Core'!
-!classDefinition: 'PPCompositeParserTest class' category: 'PetitTests-Core'!
+!classDefinition: 'PPCompositeParserTest class' category: #'PetitTests-Core'!
 PPCompositeParserTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPArithmeticParserTest category: 'PetitTests-Tests'!
+!classDefinition: #PPArithmeticParserTest category: #'PetitTests-Tests'!
 PPCompositeParserTest subclass: #PPArithmeticParserTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPArithmeticParserTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPArithmeticParserTest class' category: #'PetitTests-Tests'!
 PPArithmeticParserTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPExpressionParserTest category: 'PetitTests-Tests'!
+!classDefinition: #PPExpressionParserTest category: #'PetitTests-Tests'!
 PPArithmeticParserTest subclass: #PPExpressionParserTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPExpressionParserTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPExpressionParserTest class' category: #'PetitTests-Tests'!
 PPExpressionParserTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPLambdaParserTest category: 'PetitTests-Tests'!
+!classDefinition: #PPLambdaParserTest category: #'PetitTests-Tests'!
 PPCompositeParserTest subclass: #PPLambdaParserTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPLambdaParserTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPLambdaParserTest class' category: #'PetitTests-Tests'!
 PPLambdaParserTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPComposedTest category: 'PetitTests-Tests'!
+!classDefinition: #PPComposedTest category: #'PetitTests-Tests'!
 PPAbstractParserTest subclass: #PPComposedTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPComposedTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPComposedTest class' category: #'PetitTests-Tests'!
 PPComposedTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPExtensionTest category: 'PetitTests-Tests'!
+!classDefinition: #PPExtensionTest category: #'PetitTests-Tests'!
 PPAbstractParserTest subclass: #PPExtensionTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPExtensionTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPExtensionTest class' category: #'PetitTests-Tests'!
 PPExtensionTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPObjectTest category: 'PetitTests-Tests'!
+!classDefinition: #PPObjectTest category: #'PetitTests-Tests'!
 PPAbstractParserTest subclass: #PPObjectTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPObjectTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPObjectTest class' category: #'PetitTests-Tests'!
 PPObjectTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPParserTest category: 'PetitTests-Tests'!
+!classDefinition: #PPParserTest category: #'PetitTests-Tests'!
 PPAbstractParserTest subclass: #PPParserTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPParserTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPParserTest class' category: #'PetitTests-Tests'!
 PPParserTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPPredicateTest category: 'PetitTests-Tests'!
+!classDefinition: #PPPredicateTest category: #'PetitTests-Tests'!
 PPAbstractParserTest subclass: #PPPredicateTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPPredicateTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPPredicateTest class' category: #'PetitTests-Tests'!
 PPPredicateTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPScriptingTest category: 'PetitTests-Tests'!
+!classDefinition: #PPScriptingTest category: #'PetitTests-Tests'!
 PPAbstractParserTest subclass: #PPScriptingTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPScriptingTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPScriptingTest class' category: #'PetitTests-Tests'!
 PPScriptingTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPTokenTest category: 'PetitTests-Tests'!
+!classDefinition: #PPTokenTest category: #'PetitTests-Tests'!
 PPAbstractParserTest subclass: #PPTokenTest
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Tests'!
-!classDefinition: 'PPTokenTest class' category: 'PetitTests-Tests'!
+!classDefinition: 'PPTokenTest class' category: #'PetitTests-Tests'!
 PPTokenTest class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPParserResource category: 'PetitTests-Core'!
+!classDefinition: #PPParserResource category: #'PetitTests-Core'!
 TestResource subclass: #PPParserResource
 	instanceVariableNames: 'parsers'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Core'!
-!classDefinition: 'PPParserResource class' category: 'PetitTests-Core'!
+!classDefinition: 'PPParserResource class' category: #'PetitTests-Core'!
 PPParserResource class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPArithmeticParser category: 'PetitTests-Examples'!
+!classDefinition: #PPArithmeticParser category: #'PetitTests-Examples'!
 PPCompositeParser subclass: #PPArithmeticParser
 	instanceVariableNames: 'terms addition factors multiplication power primary parentheses number'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Examples'!
-!classDefinition: 'PPArithmeticParser class' category: 'PetitTests-Examples'!
+!classDefinition: 'PPArithmeticParser class' category: #'PetitTests-Examples'!
 PPArithmeticParser class
 	instanceVariableNames: ''!
 
-!classDefinition: #PPLambdaParser category: 'PetitTests-Examples'!
+!classDefinition: #PPLambdaParser category: #'PetitTests-Examples'!
 PPCompositeParser subclass: #PPLambdaParser
 	instanceVariableNames: 'expression abstraction application variable'
 	classVariableNames: ''
 	poolDictionaries: ''
 	category: 'PetitTests-Examples'!
-!classDefinition: 'PPLambdaParser class' category: 'PetitTests-Examples'!
+!classDefinition: 'PPLambdaParser class' category: #'PetitTests-Examples'!
 PPLambdaParser class
 	instanceVariableNames: ''!
 
@@ -161,22 +161,6 @@ PPLambdaParser class
 !PPScriptingTest commentStamp: '<historical>' prior: 0!
 These are some simple demo-scripts of parser combinators for the compiler construction course.
 http://www.iam.unibe.ch/~scg/Teaching/CC/index.html!
-
-!PPCompositeParserTest methodsFor: 'accessing' stamp: 'FirstnameLastname 11/26/2009 21:52'!
-parserClass
-	self subclassResponsibility! !
-
-!PPArithmeticParserTest methodsFor: 'accessing' stamp: 'FirstnameLastname 11/26/2009 21:53'!
-parserClass
-	^ PPArithmeticParser! !
-
-!PPLambdaParserTest methodsFor: 'accessing' stamp: 'FirstnameLastname 11/26/2009 21:53'!
-parserClass
-	^ PPLambdaParser! !
-
-!PPComposedTest methodsFor: 'accessing' stamp: 'lr 2/8/2010 16:44'!
-comment
-	^ ($" asParser , $" asParser negate star , $" asParser) flatten! !
 
 !PPAbstractParserTest methodsFor: 'utilities' stamp: 'DamienPollet 8/11/2011 01:50'!
 assert: aParser fail: aCollection
@@ -246,6 +230,23 @@ isAbstract
 packageNamesUnderTest
 	^ #('PetitParser' 'PetitTests')! !
 
+!PPCompositeParserTest methodsFor: 'accessing' stamp: 'FirstnameLastname 11/26/2009 21:52'!
+parserClass
+	self subclassResponsibility! !
+
+!PPCompositeParserTest methodsFor: 'accessing' stamp: 'lr 3/29/2010 15:21'!
+parserInstance
+	^ PPParserResource current parserAt: self parserClass! !
+
+!PPCompositeParserTest methodsFor: 'accessing' stamp: 'lr 11/18/2011 19:44'!
+parserInstanceFor: aSymbol
+	^ aSymbol = #start
+		ifTrue: [ self parserInstance ]
+		ifFalse: [
+			self parserInstance
+				productionAt: aSymbol 
+				ifAbsent: [ self error: 'Production ' , self parserClass name , '>>' , aSymbol printString , ' not found.' ] ]! !
+
 !PPCompositeParserTest methodsFor: 'utilities' stamp: 'lr 11/29/2010 11:20'!
 assert: aCollection is: anObject
 	self parse: aCollection.
@@ -278,19 +279,6 @@ parse: aString rule: aSymbol
 		description: 'Unable to parse ' , aString printString.
 	^ result! !
 
-!PPCompositeParserTest methodsFor: 'accessing' stamp: 'lr 3/29/2010 15:21'!
-parserInstance
-	^ PPParserResource current parserAt: self parserClass! !
-
-!PPCompositeParserTest methodsFor: 'accessing' stamp: 'lr 11/18/2011 19:44'!
-parserInstanceFor: aSymbol
-	^ aSymbol = #start
-		ifTrue: [ self parserInstance ]
-		ifFalse: [
-			self parserInstance
-				productionAt: aSymbol 
-				ifAbsent: [ self error: 'Production ' , self parserClass name , '>>' , aSymbol printString , ' not found.' ] ]! !
-
 !PPCompositeParserTest methodsFor: 'running' stamp: 'FirstnameLastname 11/26/2009 21:48'!
 setUp
 	super setUp.
@@ -308,6 +296,10 @@ isAbstract
 !PPCompositeParserTest class methodsFor: 'accessing' stamp: 'lr 3/29/2010 15:21'!
 resources
 	^ Array with: PPParserResource! !
+
+!PPArithmeticParserTest methodsFor: 'accessing' stamp: 'FirstnameLastname 11/26/2009 21:53'!
+parserClass
+	^ PPArithmeticParser! !
 
 !PPArithmeticParserTest methodsFor: 'testing-operations' stamp: 'lr 4/30/2008 17:21'!
 testAdd
@@ -466,6 +458,10 @@ testPrefixNegate
 shouldInheritSelectors
 	^ true! !
 
+!PPLambdaParserTest methodsFor: 'accessing' stamp: 'FirstnameLastname 11/26/2009 21:53'!
+parserClass
+	^ PPLambdaParser! !
+
 !PPLambdaParserTest methodsFor: 'testing' stamp: 'lr 4/30/2008 09:38'!
 testAbstraction
 	self assert: '\x.y' is: #('x' 'y').
@@ -587,6 +583,10 @@ testProductionAt
 	
 	self assert: (parser productionAt: #variable) notNil.
 	self assert: (parser productionAt: #variable ifAbsent: [ true ]) notNil! !
+
+!PPComposedTest methodsFor: 'accessing' stamp: 'lr 2/8/2010 16:44'!
+comment
+	^ ($" asParser , $" asParser negate star , $" asParser) flatten! !
 
 !PPComposedTest methodsFor: 'accessing' stamp: 'lr 2/8/2010 16:44'!
 identifier
@@ -1061,11 +1061,11 @@ testStream
 	| stream |
 	stream := 'abc' readStream asPetitStream.
 	self assert: (stream class = PPStream).
-	self assert: (stream printString = '·abc').
+	self assert: (stream printString = 'Â·abc').
 	self assert: (stream peek) = $a.
 	self assert: (stream uncheckedPeek = $a).
 	self assert: (stream next) = $a.
-	self assert: (stream printString = 'a·bc').
+	self assert: (stream printString = 'aÂ·bc').
 	self assert: (stream asPetitStream = stream)! !
 
 !PPExtensionTest methodsFor: 'testing-stream' stamp: 'lr 2/7/2010 20:53'!
@@ -2552,7 +2552,7 @@ testExpect
 	self assert: parser fail: 'b'.
 	self assert: parser fail: ''! !
 
-!PPPredicateTest methodsFor: 'testing-chars' stamp: 'pmon 5/31/2012 23:57'!
+!PPPredicateTest methodsFor: 'testing-chars' stamp: 'jmv 1/9/2024 15:38:00'!
 testBlank
 	| parser |
 	parser := #blank asParser.
@@ -2561,7 +2561,7 @@ testBlank
 	self assert: parser parse: (String with: Character tab) to: Character tab.
 	self assert: parser fail: ''.
 	self assert: parser fail: '1'.
-	self assert: parser fail: (String with: Character crCharacter)! !
+	self assert: parser fail: (String with: Character cr)! !
 
 !PPPredicateTest methodsFor: 'testing-chars' stamp: 'lr 5/2/2010 12:51'!
 testChar
@@ -2574,12 +2574,12 @@ testChar
 	self assert: parser fail: '1'.
 	self assert: parser fail: 'a'! !
 
-!PPPredicateTest methodsFor: 'testing-chars' stamp: 'pmon 5/31/2012 23:56'!
+!PPPredicateTest methodsFor: 'testing-chars' stamp: 'jmv 1/9/2024 15:38:06'!
 testCr
 	| parser |
 	parser := #cr asParser.
 	self assertCharacterSets: parser.
-	self assert: parser parse: (String with: Character crCharacter) to: Character crCharacter! !
+	self assert: parser parse: (String with: Character cr) to: Character cr! !
 
 !PPPredicateTest methodsFor: 'testing-chars' stamp: 'lr 11/29/2009 09:32'!
 testDigit
@@ -2618,12 +2618,12 @@ testLetter
 	self assert: parser fail: ''.
 	self assert: parser fail: '0'! !
 
-!PPPredicateTest methodsFor: 'testing-chars' stamp: 'pmon 5/31/2012 23:55'!
+!PPPredicateTest methodsFor: 'testing-chars' stamp: 'jmv 1/9/2024 15:39:56'!
 testLf
 	| parser |
 	parser := #lf asParser.
 	self assertCharacterSets: parser.
-	self assert: parser parse: (String with: Character lfCharacter) to: Character lfCharacter! !
+	self assert: parser parse: (String with: Character lf) to: Character lf! !
 
 !PPPredicateTest methodsFor: 'testing-chars' stamp: 'lr 11/29/2009 09:32'!
 testLowercase
@@ -2636,13 +2636,13 @@ testLowercase
 	self assert: parser fail: 'A'.
 	self assert: parser fail: '0'! !
 
-!PPPredicateTest methodsFor: 'testing-chars' stamp: 'pmon 5/31/2012 23:57'!
+!PPPredicateTest methodsFor: 'testing-chars' stamp: 'jmv 1/9/2024 15:38:14'!
 testNewline
 	| parser |
 	parser := #newline asParser.
 	self assertCharacterSets: parser.
-	self assert: parser parse: (String with: Character crCharacter) to: Character crCharacter.
-	self assert: parser parse: (String with: Character lfCharacter) to: Character lfCharacter.
+	self assert: parser parse: (String with: Character cr) to: Character cr.
+	self assert: parser parse: (String with: Character lf) to: Character lf.
 	self assert: parser fail: ' '! !
 
 !PPPredicateTest methodsFor: 'testing-chars' stamp: 'lr 5/5/2010 14:14'!
@@ -2891,20 +2891,20 @@ testValue
 	self assert: result value = input.
 	self deny: result value == input! !
 
-!PPTokenTest methodsFor: 'testing-querying' stamp: 'pmon 6/1/2012 00:00'!
+!PPTokenTest methodsFor: 'testing-querying' stamp: 'jmv 1/9/2024 15:38:27'!
 testColumn
 	| input parser result |
-	input := '1' , (String with: Character crCharacter) , '12' , (String with: Character crCharacter with: Character lfCharacter) , '123' , (String with: Character lfCharacter) , '1234'.
+	input := '1' , (String with: Character cr) , '12' , (String with: Character cr with: Character lf) , '123' , (String with: Character lf) , '1234'.
 	parser := #any asParser token star.
 	result := parser parse: input.
 	result 
 		with:  #(1 2 1 2 3 4 1 2 3 4 1 2 3 4)
 		do: [ :token :line | self assert: token column = line ]! !
 
-!PPTokenTest methodsFor: 'testing-querying' stamp: 'pmon 6/1/2012 00:01'!
+!PPTokenTest methodsFor: 'testing-querying' stamp: 'jmv 1/9/2024 15:38:45'!
 testLine
 	| input parser result |
-	input := '1' , (String with: Character crCharacter) , '12' , (String with: Character crCharacter with: Character lfCharacter) , '123' , (String with: Character lfCharacter) , '1234'.
+	input := '1' , (String with: Character cr) , '12' , (String with: Character cr with: Character lf) , '123' , (String with: Character lf) , '1234'.
 	parser := #any asParser token star.
 	result := parser parse: input.
 	result 

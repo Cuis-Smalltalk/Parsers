@@ -1,6 +1,6 @@
 'From Cuis 6.0 [latest update: #5546] on 31 October 2022 at 6:14:39 pm'!
 'Description Please enter a description for this package '!
-!provides: 'PetitParser' 1 4!
+!provides: 'PetitParser' 1 5!
 !requires: 'SqueakCompatibility' 1 37 nil!
 SystemOrganization addCategory: 'PetitParser-Core'!
 SystemOrganization addCategory: 'PetitParser-Tools'!
@@ -801,7 +801,7 @@ printOn: aStream
 initialize
 	"Platform independent newline sequence. LF: Unix, CR+LF: Windows, and CR: Apple."
 
-	NewLineParser := (Character lfCharacter asParser) / (Character crCharacter asParser , Character lfCharacter asParser optional)! !
+	NewLineParser := (Character lf asParser) / (Character cr asParser , Character lf asParser optional)! !
 
 !PPToken class methodsFor: 'instance creation' stamp: 'lr 4/6/2010 20:58'!
 new
@@ -2130,7 +2130,7 @@ chars: aCollection message: aString
 
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'pmon 5/31/2012 23:56'!
 cr
-	^ self char: Character crCharacter message: 'carriage return expected'! !
+	^ self char: Character cr message: 'carriage return expected'! !
 
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:06'!
 digit
@@ -2151,7 +2151,7 @@ letter
 
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'pmon 5/31/2012 23:54'!
 lf
-	^ self char: Character lfCharacter! !
+	^ self char: Character lf! !
 
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:06'!
 lowercase
@@ -2159,7 +2159,7 @@ lowercase
 
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'pmon 5/31/2012 23:57'!
 newline
-	^ self chars: (String with: Character crCharacter with: Character lfCharacter) message: 'newline expected'! !
+	^ self chars: (String with: Character cr with: Character lf) message: 'newline expected'! !
 
 !PPPredicateObjectParser class methodsFor: 'factory-chars' stamp: 'lr 8/25/2010 11:04'!
 punctuation
@@ -2257,18 +2257,6 @@ asParser
 	^ PPPredicateObjectParser between: self and: aCharacter! !
 
 !Character methodsFor: '*petitparser-core-converting' stamp: 'lr 12/18/2011 15:58'!
-asParser
-	"Answer a parser that accepts the receiving character."
-	
-	^ PPLiteralObjectParser on: self! !
-
-!UnicodeCodePoint methodsFor: '*petitparser-core-operators' stamp: 'jmv 10/31/2022 17:43:54'!
-- aCharacter
-	"Create a range of characters between the receiver and the argument."
-	
-	^ PPPredicateObjectParser between: self and: aCharacter! !
-
-!UnicodeCodePoint methodsFor: '*petitparser-core-converting' stamp: 'jmv 10/31/2022 17:44:08'!
 asParser
 	"Answer a parser that accepts the receiving character."
 	
