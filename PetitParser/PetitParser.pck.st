@@ -1,6 +1,6 @@
 'From Cuis 6.0 [latest update: #5546] on 31 October 2022 at 6:14:39 pm'!
 'Description Please enter a description for this package '!
-!provides: 'PetitParser' 1 5!
+!provides: 'PetitParser' 1 6!
 !requires: 'SqueakCompatibility' 1 37 nil!
 SystemOrganization addCategory: 'PetitParser-Core'!
 SystemOrganization addCategory: 'PetitParser-Tools'!
@@ -1087,7 +1087,7 @@ propertyAt: aKey ifAbsentPut: aBlock
 propertyAt: aKey put: anObject
 	"Set the property at aKey to be anObject. If aKey is not found, create a new entry for aKey and set is value to anObject. Answer anObject."
 
-	^ (properties ifNil: [ properties := Dictionary new: 1 ])
+	^ (properties ifNil: [ properties := Dictionary new ])
 		at: aKey put: anObject! !
 
 !PPParser methodsFor: 'accessing-properties' stamp: 'lr 4/19/2010 10:33'!
