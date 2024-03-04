@@ -1,6 +1,6 @@
-'From Cuis6.3 [latest update: #6200] on 29 January 2024 at 4:36:16 pm'!
+'From Cuis6.3 [latest update: #6247] on 3 March 2024 at 10:43:47 am'!
 'Description Please enter a description for this package '!
-!provides: 'PetitTests' 1 3!
+!provides: 'PetitTests' 1 4!
 !requires: 'PetitParser' 1 2 nil!
 SystemOrganization addCategory: #'PetitTests-Core'!
 SystemOrganization addCategory: #'PetitTests-Examples'!
@@ -2499,9 +2499,9 @@ parsedCharacterSet: aParser
 			ifTrue: [ result nextPut: char ] ].
 	^ result contents! !
 
-!PPPredicateTest methodsFor: 'private' stamp: 'pmon 5/31/2012 23:53'!
+!PPPredicateTest methodsFor: 'private' stamp: 'MM 3/3/2024 10:34:54'!
 charactersDo: aBlock
-	0 to: 255 do: [ :index | aBlock value: (Character value: index) ]! !
+	0 to: 255 do: [ :index | aBlock value: (Character codePoint: index) ]! !
 
 !PPPredicateTest methodsFor: 'testing-objects' stamp: 'lr 11/29/2009 09:32'!
 testAny
